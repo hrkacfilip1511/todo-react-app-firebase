@@ -1,0 +1,33 @@
+form {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.form input {
+  font-size: 1.2rem;
+  width: 60%;
+  padding: 8px 13px;
+  border: none;
+  border-radius: 5px;
+}
+.form input:focus {
+  outline: none;
+}
+.btn .button {
+  cursor: pointer;
+  background-color: bisque;
+  font-size: 1.3rem;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+}
+.btn button:hover {
+  background-color: beige;
+}

@@ -6,7 +6,9 @@ import Card from "./UI/Card";
 function App() {
   return (
     <div>
-      <Todos />
+      <Card>
+        <Todos />
+      </Card>
     </div>
   );
 }

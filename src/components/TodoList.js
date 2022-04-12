@@ -1,5 +1,9 @@
+import classes from "./TodoList.module.css";
+
 const TodoList = (props) => {
-  let content = <span>No Todos yet. Add some</span>;
+  let content = (
+    <span className={classes.empty_list}>No Todos yet. Add some.</span>
+  );
 
   if (props.todos.length > 0) {
     content = props.todos.map((todo) => {
