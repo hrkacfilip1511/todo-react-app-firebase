@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { FaSpinner } from "react-icons/fa";
+
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [isLoading, setLoading] = useState(false);

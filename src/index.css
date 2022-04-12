@@ -27,3 +27,7 @@ code {
   left: 50%;
   transform: translate(-50%);
 }
+.finger_pointer {
+  font-size: 2rem;
+  color: bisque;
+}

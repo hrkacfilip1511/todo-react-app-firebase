@@ -1,6 +1,8 @@
 import { FaRegCheckCircle } from "react-icons/fa";
 import classes from "./TodoItem.module.css";
 import { useState } from "react";
+import PropTypes from "prop-types";
+
 const TodoItem = (props) => {
   const [isChecked, setChecked] = useState(false);
 
@@ -28,5 +30,11 @@ const TodoItem = (props) => {
       </li>
     </div>
   );
+};
+
+TodoItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  onRemoveItem: PropTypes.func.isRequired,
+  inputVal: PropTypes.string,
 };
 export default TodoItem;

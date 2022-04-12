@@ -1,5 +1,7 @@
 import { useState } from "react";
 import classes from "./TodoForm.module.css";
+import PropTypes from "prop-types";
+
 const TodoForm = (props) => {
   const [inputVal, setInputVal] = useState("");
 
@@ -26,5 +28,7 @@ const TodoForm = (props) => {
     </div>
   );
 };
-
+TodoForm.propTypes = {
+  onAddTodo: PropTypes.func.isRequired,
+};
 export default TodoForm;

@@ -1,13 +1,16 @@
 import classes from "./TodoList.module.css";
-
+import PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
+import { FaHandPointUp } from "react-icons/fa";
 const TodoList = (props) => {
   const onRemoveItemHandler = (id) => {
     props.onRemoveItem(id);
   };
 
   let content = (
-    <span className={classes.empty_list}>No Todos yet. Add some.</span>
+    <span className={classes.empty_list}>
+      No Todos yet. Add some. <FaHandPointUp className="finger_pointer" />
+    </span>
   );
 
   if (props.todos.length > 0) {
@@ -32,4 +35,8 @@ const TodoList = (props) => {
   );
 };
 
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string.isRequired)),
+  onRemoveItem: PropTypes.func.isRequired,
+};
 export default TodoList;
