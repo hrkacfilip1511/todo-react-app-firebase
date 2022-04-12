@@ -12,3 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.checkButton {
+  font-size: 1.5rem;
+  width: 10%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.checkButton:hover {
+  cursor: pointer;
+}
+.spinner_loader {
+  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}

@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-
+import { FaSpinner } from "react-icons/fa";
 const Todos = () => {
   const [todos, setTodos] = useState([]);
+  const [isLoading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch(
       "https://todo-react-a2b00-default-rtdb.europe-west1.firebasedatabase.app/todos.json"
     )
       .then((response) => {
+        setLoading(false);
         return response.json();
       })
       .then((data) => {
@@ -23,6 +26,7 @@ const Todos = () => {
       });
   }, []);
   const addTodosHandler = (todo) => {
+    setLoading(true);
     fetch(
       "https://todo-react-a2b00-default-rtdb.europe-west1.firebasedatabase.app/todos.json",
       {
@@ -34,6 +38,7 @@ const Todos = () => {
       }
     )
       .then((response) => {
+        setLoading(false);
         return response.json();
       })
       .then((data) => {
@@ -41,18 +46,21 @@ const Todos = () => {
       });
   };
   const removeItemHandler = (todoId) => {
+    setLoading(true);
     fetch(
       `https://todo-react-a2b00-default-rtdb.europe-west1.firebasedatabase.app/todos/${todoId}.json`,
       {
         method: "DELETE",
       }
-    ).then(
-      setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== todoId))
-    );
+    ).then((response) => {
+      setLoading(false);
+      setTodos((prevTodo) => prevTodo.filter((todo) => todo.id !== todoId));
+    });
   };
   return (
     <div>
       <TodoForm onAddTodo={addTodosHandler} />
+      {isLoading && <FaSpinner className="spinner_loader" />}
       <TodoList todos={todos} onRemoveItem={removeItemHandler} />
     </div>
   );

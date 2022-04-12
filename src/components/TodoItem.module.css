@@ -1,11 +1,3 @@
-.empty_list {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-h3 {
-  letter-spacing: 1px;
-}
 .todoItem {
   display: flex;
 
